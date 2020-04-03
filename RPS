@@ -1,0 +1,62 @@
+const getUserChoice = function(userInput){
+  userInput = userInput.toLowerCase();
+  if (userInput === 'rock'|| userInput ==='paper'|| userInput ==='scissors'){
+    return userInput;
+  }else {
+    console.log('Error');
+  }
+}
+
+userChoice = getUserChoice('rock'); 
+console.log(getUserChoice('rock'));
+
+const getComputerChoice = function(){
+  randomNumber = Math.floor(Math.random()*3);
+  switch(randomNumber) {
+    case 0:
+    return 'rock';
+    break;
+    case 1:
+    return 'paper';
+    break;
+    case 2:
+    return 'scissors';
+    break;
+    default:
+    return 'error';
+  }
+}
+
+computerChoice = getComputerChoice();
+console.log(getComputerChoice());
+
+
+const determineWinner = function(userChoice, computerChoice){
+  if (userChoice === computerChoice){
+    return 'The match is draw! Play again.';
+  }
+  if (userChoice === 'rock'){
+    if (computerChoice === 'paper'){
+      return 'you lost';
+    }else{
+      return 'you won';
+    }
+  }
+   if (userChoice === 'paper'){
+    if (computerChoice === 'rock'){
+      return 'you won';
+    }else{
+      return 'you lost';
+    }
+  }
+
+  if (userChoice === 'scissors'){
+    if (computerChoice === 'rock'){
+      return 'you lost';
+    }else{
+      return 'you won';
+    }
+  } 
+    }
+
+console.log(determineWinner());
